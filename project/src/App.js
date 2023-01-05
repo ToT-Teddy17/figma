@@ -1,28 +1,26 @@
 import './App.css';
-import products from './Seed'
-import ProductFunc from './AppFunc';
-function App(){
-  
+import 'bootstrap-icons/font/bootstrap-icons.css'
+import "bootstrap/dist/css/bootstrap.min.css"
+import MainMenu from './components/MainMenu';
+import Header from './components/Header';
+import Search from './components/Search';
+import CanonCamera from './components/CanonCamera';
 
-return(
-  <div className='container'>
-    <div className="header">
-      <div>Need help? Call us: (+98) 0234 456 789</div>
-      <div className='header-right'>
-        <div>
-          <img src=''></img>
-          Our store
-        </div>
-        <div>
-          <img src=''></img>
-          track your order
-        </div>
-      </div>
+function App() {
+
+
+
+  return (
+    <div className='container'>
+      <Header />
+      <Search/>
+
+      <MainMenu />
+      <CanonCamera/>
+
 
     </div>
-    
-  </div>
-);
+  );
 
 }
 

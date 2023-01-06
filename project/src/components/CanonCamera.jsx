@@ -10,7 +10,8 @@ function CanonCamera() {
 
         <div className='slider'>
             <div className='slider-left'>
-                <h1>Canon
+                <h1 className='canon
+                '>Canon
                     camera</h1>
                     <SharButton/>
                     
@@ -25,7 +26,7 @@ function CanonCamera() {
 
 
             </div>
-            <img className='w-50 ' src="Digital-SLR-Camera-PNG-Transparent-Image.png" alt="" />
+            <img className='canonimg ' src="81.png" alt="" />
 
            
         </div>

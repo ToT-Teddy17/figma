@@ -25,6 +25,6 @@ const SubMenu = (props) => {
 
 
         </div>
-    );
+    )
 };
 export default SubMenu

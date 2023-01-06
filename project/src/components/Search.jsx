@@ -9,7 +9,7 @@ function Search(){
 
     return(
         <div className="search-ikhbie">
-            <img className="logo" src="houston-texans-logo-transparent.png"  alt="" />
+            <img className="logo" src="logo.png"  alt="" />
 
        
        <Form className="search-box">

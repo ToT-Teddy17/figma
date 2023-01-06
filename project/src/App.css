@@ -8,9 +8,32 @@
  background-attachment: fixed;
  background-position: center; 
  background-size: cover;
+ width: 1440px;
+ margin: auto;
  
  
 }
+h1{
+  color: #003F62;
+}
+.aButton a{
+
+  text-decoration: none;
+  border: 2px solid grey;
+  border-radius:20px;
+  padding: 5px;
+  color: #003F62;
+  
+  
+}
+.chincha{
+  padding-right: 360px;
+}
+.aButton{
+  margin-top: 15px;
+  
+}
+
 .days{
   color: #003F62;
 
@@ -44,6 +67,15 @@
   align-items: center;
   
 }
+.hello{
+  width: 200px;
+  height: 400px;
+  
+}
+.canon{
+  color: #003F62;
+}
+
 .sub{
   display: flex;
 }
@@ -63,14 +95,33 @@
   
   
 }
-.logo{
-  width: 50px;
-  height: 50px;
-}
+
 .text-heseg{
   display: flex;
   width: 200px;
   justify-content: space-evenly;
 }
 
+
+.cardbody img{
+  height: 200px;
+}
+
+.Cardmenu {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  gap: 100px;
+  row-gap: 50px;
+  padding-left: 150px;
+
+  
+  
+
+  
+}
+
+.Cardmenu img{
+  height: 170px;
+}
 

@@ -26,6 +26,37 @@ h1{
   
   
 }
+.SaleUp-box{
+  background: url(img/bg.png);
+  height: 417px;
+  width: 1160px;
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
+
+}
+.SaleUp-box h1{
+  color: #2E8FC5;
+}
+.SaleUp-text{
+  text-align: center;
+  margin-left: 700px;
+}
+.SaleUp-text p{
+  color: #fff;
+}
+
+
+.SaleUp-box button{
+  
+  background-color:#EDA415;
+  border: #EDA415;
+  border-radius: 20px;
+}
 .chincha{
   padding-right: 360px;
 }
@@ -125,3 +156,80 @@ h1{
   height: 170px;
 }
 
+
+
+
+
+.Frame-box{
+  display: flex;
+  height: 505px;
+width: 703px;
+left: 51px;
+top: 2303px;
+border-radius: 20px ;
+border: 1px solid black;
+
+}
+.Frame-box img{
+  height: 416px;
+width: 425px;
+left: 31px;
+top: 44.5px;
+border-radius: 0px;
+
+}
+.Frame-text{
+  display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+padding: 0px;
+gap: 15.74px;
+
+width: 224px;
+
+}
+.Frame-box button{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 0px 0px 25.572px;
+  gap: 4.92px;
+  isolation: isolate;
+  
+  width: 160px;
+  height: 60px;
+  
+  background: #87BCD9;
+  border: #87BCD9;
+  border-radius: 19.6707px;
+
+  
+}
+
+.Frame-right-box{
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  margin-left: 30px;
+
+top: 2303px;
+
+
+}
+.south{
+  display: flex;
+  height: 230px;
+width: 430px;
+left: 51px;
+
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 15.84px;
+border-radius: 20px ;
+border: 1px solid black;
+}
+.frame{
+  display: flex;
+}

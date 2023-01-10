@@ -6,6 +6,8 @@ import Header from './components/Header';
 import Search from './components/Search';
 import CanonCamera from './components/CanonCamera';
 import CardMenu from './components/Cards';
+import SaleUp from './components/SaleUp';
+import Frame53 from './components/Frame53';
 
 
 function App() {
@@ -36,6 +38,13 @@ function App() {
       <div className='Cardmenu'>
       
       <CardMenu/>
+      <SaleUp/>
+
+      <div>
+        <Frame53/>
+        <div></div>
+      </div>
+      
 
 
      

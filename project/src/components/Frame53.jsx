@@ -7,6 +7,7 @@ function Frame53() {
             <div className="Frame-text">
                 <h1> JBL bar 2.1 deep bass</h1>
                 <p>$11,70</p>
+                <Stars/>
 
                 <button><b> Add a cart </b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <i className="bi bi-cart bg-warning rounded-circle"></i> </button>
             </div>
@@ -18,6 +19,7 @@ function Frame53() {
             <div className="Frame-text-right">
                 <h1> Play Game</h1>
                 <p>$11,70</p>
+                <Stars/>
 
                
             </div>
@@ -26,11 +28,11 @@ function Frame53() {
             <img src="Frame30.png" alt="" />
             <div className="Frame-text-right">
                 <h1> Play Game</h1>
+            
                 <p>$11,70</p>
                 <Stars/>
+              
                 
-
-               
             </div>
             </div>
 

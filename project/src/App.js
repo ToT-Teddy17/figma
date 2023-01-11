@@ -8,6 +8,9 @@ import CanonCamera from './components/CanonCamera';
 import CardMenu from './components/Cards';
 import SaleUp from './components/SaleUp';
 import Frame53 from './components/Frame53';
+import Frame58 from './components/Frame58';
+import Frame66 from './components/Frame66';
+
 
 
 function App() {
@@ -42,7 +45,8 @@ function App() {
 
       <div>
         <Frame53/>
-        <div></div>
+        <Frame58/>
+        <Frame66/>
       </div>
       
 

@@ -1,39 +1,15 @@
 
-// import { useState } from "react";
-// import { Rating } from "react-simple-star-rating";
-// export default function  Stars() {
-    
-// }
-// function handleUpVote() {
-    
-    
-// }
 
 import React, { useState } from 'react'
 import { Rating } from 'react-simple-star-rating'
+import cards from '../data/card'
 
-export function Stars() {
-  const [rating, setRating] = useState(0)
-
-  // Catch Rating value
-  const handleRating = () => {
-   
-
-    // other logic
-  }
-  // Optinal callback functions
-  const onPointerEnter = () => console.log('Enter')
-  const onPointerLeave = () => console.log('Leave')
+export function Stars(props) {
   
-
   return (
-    <div className='App'>
+    <div className='starnuud'>
       <Rating
-        onClick={handleRating}
-        onPointerEnter={onPointerEnter}
-        onPointerLeave={onPointerLeave}
-        
-        /* Available Props */
+      initialValue={cards.rate}
       />
     </div>
   )

@@ -5,7 +5,7 @@ import Cardheseg from "./CardSub";
 
 const cardMenu = cards.map((card) => {
     return <Cardheseg
-        title={card.title} rating={card.rating} img={card.img} />
+        title={card.title} rating={card.rating} img={card.img} rate={card.rate} />
 })
 
 function Cards() {

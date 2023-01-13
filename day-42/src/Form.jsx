@@ -2,6 +2,14 @@ import { useState } from 'react'
 
 export default function Form() {
     const [users, setUsers] = useState([])
+    
+  
+ 
+  
+    
+
+    
+  
     function handleRegister(event) {
         event.preventDefault()
         console.log(event.target.firstname.value)
@@ -21,17 +29,16 @@ export default function Form() {
                 <div>Password:<input name='password'></input></div>
                 <div>ConfirmPassword:<input name='confirm'></input></div>
                 <div>
-                    <button >Register</button></div>
+                    
+                    <button  >Register</button></div>
             </form>
 
             {users.map(u => {
                 return (
-                    <div>
-                        <div>FirstName:{u.firstname}</div>
-                        <div>LastName:{u.lastname}</div>
-                        <div>Pass:{u.password}</div>
-
-
+                    <div className='cutes'>
+                        <div className=''>{u.firstname}</div>
+                        <div> {u.lastname}</div>
+                        {u.password}
                     </div>
                 )
             })}

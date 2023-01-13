@@ -2,49 +2,90 @@ import React from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
+import Cardheseg from "./CardSub";
+import Cards from "./Cards";
+import { useState } from 'react'
+import cards from "../data/card";
 
 
 
-function Search(){
+function Search(props) {
+  const [counter, setCounter] = useState(0);
+  const [users, setUsers] = useState([])
+    
+  
+ 
+  
+    
 
-    return(
-        <div className="search-ikhbie">
-            <img className="logo" src="logo.png"  alt="" />
+    
+  
+    function handleRegister(event) {
+        event.preventDefault()
+        console.log(event.target.firstname.value)
+        console.log(users)
+        const user = {
+            title: cards.title.value,
+            lastname: event.target.lastname.value,
+            password: event.target.password.value,
+        }
+        setUsers([...users, user])
+        
+    }
 
-       
-       <Form className="search-box">
-           <Form.Label htmlFor="inlineFormInput" visuallyHidden>
-             Search
-           </Form.Label>
-           <Form.Control
-             
-             id="inlineFormInput"
-             placeholder="Search"
-           />
-           <Button className="btn-warning text-light" type="submit">
+
+
+
+  return (
+    <form onSubmit={handleRegister}>
+      <div className="search-ikhbie">
+        <img className="logo" src="logo.png" alt="" />
+
+
+        <Form className="search-box">
+          <Form.Label htmlFor="inlineFormInput" visuallyHidden>
+            Search
+          </Form.Label>
+          <Form.Control
+
+            id="inlineFormInput"
+            placeholder="Search"
+          />
+          <Button className="btn-warning text-light" type="submit">
             Search
           </Button>
-    </Form>
+        </Form>
 
-<div className="text-heseg">
-    <div><i class="bi bi-person"></i>
-    <a href="@">Sign in</a></div>
-    <div><i class="bi bi-heart"></i>
-    <i class="bi bi-0-circle-fill text-warning"></i></div>
-    <div>
-    <i class="bi bi-cart"></i>
-    <i class="bi bi-0-circle-fill text-warning"></i>
+        <div className="text-heseg">
+          <div><i class="bi bi-person"></i>
+            <a href="@">Sign in</a></div>
+          <div><i class="icons bi bi-heart"></i>
+          </div>
+          <div>
+            <button className="icons">
+              <i class=" bi bi-cart"></i></button>
+            <i class="text-warning">{props.wishlist} </i>
+            {cards.map(u => {
+                return (
+                    <div>
+                        <div>{u.title}</div>
+                       
+                    </div>
+                )
+            })}
+          </div>
+        
+
+      </div>
+
     </div>
-
-</div>
-
-    </div>
+    </form>
 
 
 
 
-      
-     
-    )
+
+
+  )
 }
 export default Search

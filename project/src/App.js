@@ -14,53 +14,55 @@ import Frame68 from './components/Frame68';
 import Frame69 from './components/Frame69';
 import Frame76 from './components/Frame76';
 import CanonUnder from './components/CanonUnder';
+import { useState } from 'react'
 
 
 
 
 function App() {
 
-
+  const [wishlist, setWishList] = useState(0)
 
   return (
     <div className='
     '>
       <Header />
-      <Search/>
+      <Search wishlist={wishlist} />
 
       <MainMenu />
-      <CanonCamera/>
-      <CanonUnder/>
+      <CanonCamera />
+      <CanonUnder />
       <div className=' align-middle d-flex justify-content-around bg-white'>
         <h1 className='chincha'>Popular products</h1>
         <div className='aButton'>
           <a href='@'>Cameras</a>
-          
-        
+
+
           <a href='@'>Laptops</a>
-          
+
           <a href='@'>Tablets</a>
-          
+
           <a href='@'>Mouses</a>
         </div>
       </div>
       <div className='Cardmenu'>
-      
-      <CardMenu/>
-      <SaleUp/>
 
-      <div>
-        <Frame53/>
-        <Frame58/>
-        <Frame66/>
-        <Frame68/>
-        <Frame69/>
-        <Frame76/>
-      </div>
-      
+        <CardMenu wishlist={wishlist}
+          setWishList={setWishList} />
+        <SaleUp />
+
+        <div>
+          <Frame53 />
+          <Frame58 />
+          <Frame66 />
+          <Frame68 />
+          <Frame69 />
+          <Frame76 />
+        </div>
 
 
-     
+
+
       </div>
 
 

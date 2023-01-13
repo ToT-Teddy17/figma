@@ -292,3 +292,100 @@ border: 1px solid black;
   justify-content: center;
   
 }
+.f68 img{
+  height: 40px;
+  margin: 20px;
+}
+.f68{
+  display: flex;
+  justify-content: space-evenly;
+  border: dashed #c5e7fc ;
+  background: #E2F4FF;
+  margin-top: 50px;
+  width: 1340px;
+  
+}
+
+h3 ,p{
+  color: #1B5A7D;
+}
+.f69{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 70px;
+  width: 1340px;
+}
+
+
+
+.F76{
+  border: 1px solid gray;
+  width: 650px;
+  height: 380px;
+  gap: 24px;
+  border-radius: 20px;
+  display: flex;
+  margin-right:30px ;
+  
+}
+.F76 img{
+  width: 320px;
+  height: 288px;
+  border-radius: 20px;
+  margin:  50px; 
+  margin-right: 0;
+}
+.marquee{
+ margin: auto;
+ width: 400px;
+ gap: 400px;
+ 
+  height: 400px;
+}
+.F76-text{
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+
+}
+
+
+
+
+
+
+
+
+.under{
+  border: 1px solid gray;
+  width: 360px;
+  gap: 24px;
+  border-radius: 20px;
+  display: flex;
+  margin-right:30px ;
+
+  background-color: #fff;
+  
+}
+.under img{
+  width: 120px;
+  height: 120px;
+  border-radius: 20px;
+  margin:  50px; 
+  margin-right: 0;
+}
+.marque{
+  width: 400px;
+  gap: 400px;
+  
+  background: #fff;
+
+}
+.F76text{
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+
+}
+

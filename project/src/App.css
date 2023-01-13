@@ -337,8 +337,10 @@ h3 ,p{
   margin-right: 0;
 }
 .marquee{
-  
-  margin: auto;
+ margin: auto;
+ width: 400px;
+ gap: 400px;
+ 
   height: 400px;
 }
 .F76-text{
@@ -357,11 +359,12 @@ h3 ,p{
 
 .under{
   border: 1px solid gray;
-  width: 380px;
+  width: 360px;
   gap: 24px;
   border-radius: 20px;
   display: flex;
   margin-right:30px ;
+
   background-color: #fff;
   
 }
@@ -372,10 +375,12 @@ h3 ,p{
   margin:  50px; 
   margin-right: 0;
 }
-.marquee-container{
-  width: 1340px;
-  margin: auto;
-  height: 250px;
+.marque{
+  width: 400px;
+  gap: 400px;
+  
+  background: #fff;
+
 }
 .F76text{
   display: flex;

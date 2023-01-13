@@ -1,0 +1,33 @@
+*{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background: black;
+  color: blanchedalmond;
+  
+}
+input{
+  background: bisque;
+  color: black;
+}
+.box{
+  
+  align-items: center;
+  
+}
+button{
+  background: chocolate;
+  width: 100px;
+  height: 100px;
+  border-radius: 30px;
+  border: chocolate;
+  
+  
+}
+button:hover{
+  background-color: cornflowerblue;
+}
+.box div{
+  display:  flex;
+  flex-direction: column;
+  width: 400px;
+  margin: auto;
+}

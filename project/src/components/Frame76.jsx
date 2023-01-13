@@ -6,7 +6,7 @@ function Frame76() {
 
 
     return (
-        <Marquee className="marque">
+        <Marquee className="marquee-container">
             <div className="f75 d-flex justify-content-between ">
                 <div className="F76 ">
                     <img src="blog1.png" alt="" />
@@ -50,7 +50,7 @@ function Frame76() {
                         </div>
                         <p>By spacing tech</p>
                     </div></div>
-                <div className="F76"><img src="blog1.png" alt="" />
+                {/* <div className="F76"><img src="blog1.png" alt="" />
                    
                     <div className="F76-text">
                         <div>
@@ -60,8 +60,8 @@ function Frame76() {
                             <p>Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper. Phasellus tristique aenean at lorem sed scelerisque.</p>
                         </div>
                         <p>By spacing tech</p>
-                    </div></div>
-                <div className="F76"><img src="blog2.png" alt="" />
+                    </div></div> */}
+                {/* <div className="F76"><img src="blog2.png" alt="" />
                     
                     <div className="F76-text">
                         <div>
@@ -71,7 +71,7 @@ function Frame76() {
                             <p>Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper. Phasellus tristique aenean at lorem sed scelerisque.</p>
                         </div>
                         <p>By spacing tech</p>
-                    </div></div>
+                    </div></div> */}
             </div>
 
         </Marquee>

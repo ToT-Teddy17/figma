@@ -155,9 +155,21 @@ h1{
 
   
 }
+.cardIcon img{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 
 .Cardmenu img{
   height: 170px;
+}
+.icons{
+  
+  background-color:#EDA415 ;
+  border-radius:40% ;
 }
 
 

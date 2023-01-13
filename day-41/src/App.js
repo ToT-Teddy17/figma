@@ -19,10 +19,10 @@ function App() {
   }
   return (
     <div>
-      {/* <p>{counter}</p>
+      <p>{counter}</p>
       <button onClick={handleClick}>Button</button>
 
-      <Update/> */}
+      <Update/>
       <Object/>
       </div>
       

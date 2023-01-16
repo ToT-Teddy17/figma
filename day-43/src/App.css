@@ -2,3 +2,15 @@
   background-color: black;
   color: blanchedalmond;
 }
+#navbar{
+  display: flex;
+  justify-content: space-evenly;
+
+  
+}
+a{
+  text-decoration: none;
+}
+#navbar a:hover{
+  color: red;
+}

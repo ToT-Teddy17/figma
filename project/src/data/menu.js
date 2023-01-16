@@ -6,7 +6,7 @@ const menus=[
         position:1,
         children:[
             {
-                title:'Home Children 1',
+                title:'All categary',
                 position: 1
             },
             {

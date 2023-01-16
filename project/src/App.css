@@ -401,3 +401,12 @@ h3 ,p{
 
 }
 
+
+.Footer-box{
+  background-color: #E2F4FF;
+}
+
+.ehnii-box{
+  background-color: #F4F4F4;
+  display: flex;
+}

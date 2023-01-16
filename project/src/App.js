@@ -15,6 +15,7 @@ import Frame69 from './components/Frame69';
 import Frame76 from './components/Frame76';
 import CanonUnder from './components/CanonUnder';
 import { useState } from 'react'
+import Footer from './components/Footer';
 
 
 
@@ -59,6 +60,8 @@ function App() {
           <Frame69 />
           <Frame76 />
         </div>
+
+        <Footer/>
 
 
 

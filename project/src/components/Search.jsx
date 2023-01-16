@@ -6,6 +6,8 @@ import Cardheseg from "./CardSub";
 import Cards from "./Cards";
 import { useState } from 'react'
 import cards from "../data/card";
+import { Routes, Route,Link} from 'react-router-dom'
+import Sign from "./Sign";
 
 
 
@@ -58,7 +60,7 @@ function Search(props) {
 
         <div className="text-heseg">
           <div><i class="bi bi-person"></i>
-            <a href="@">Sign in</a></div>
+            <a href="/sign">Sign in</a></div>
           <div><i class="icons bi bi-heart"></i>
           </div>
           <div>
@@ -73,6 +75,10 @@ function Search(props) {
                     </div>
                 )
             })}
+
+           
+
+            
           </div>
         
 

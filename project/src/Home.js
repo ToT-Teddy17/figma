@@ -18,13 +18,14 @@ import { useState } from 'react'
 import { Routes, Route,Link} from 'react-router-dom'
 import Footer from './components/Footer';
 import Sign from './components/Sign';
+import Home from '../../day-43/src/components/Home';
 
 
 
 
 
 
-function App() {
+function Nuur() {
 
   const [wishlist, setWishList] = useState(0)
 
@@ -106,5 +107,4 @@ function App() {
 
 
 
-export default App;
-
+export default Nuur;

@@ -18,6 +18,7 @@ import { useState } from 'react'
 import { Routes, Route,Link} from 'react-router-dom'
 import Footer from './components/Footer';
 import Sign from './components/Sign';
+import FirstPage from './components/AppFunc';
 
 
 
@@ -31,7 +32,7 @@ function App() {
   return (
     <div className='
     '>
-      <Header />
+      {/* <Header />
       <Search wishlist={wishlist} />
       <MainMenu />
       <CanonCamera />
@@ -62,12 +63,19 @@ function App() {
           <Frame68 />
           <Frame69 />
           <Frame76 />
-        </div>
+        </div> */}
 
 
-        <Routes>
+        {/* <Routes>
           <Route path="/sign" element={<Sign/>}></Route>
-        </Routes>
+        </Routes> */}
+       <Routes>
+      <Route path={'/'} element={<FirstPage/>}/>
+      <Route path="/sign" element={<Sign/>}></Route>
+      <Route path="/register"  element={<FirstPage/>} ></Route>
+      
+      
+    </Routes>
 
 
 
@@ -98,7 +106,7 @@ function App() {
       </div>
 
 
-    </div>
+    // </div>
   );
 
 }

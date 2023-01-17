@@ -1,0 +1,15 @@
+*{
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: black;
+  color: blanchedalmond;
+}
+.tsom{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+a :hover{
+ 
+  color: red;
+}

@@ -19,6 +19,7 @@ import { Routes, Route,Link} from 'react-router-dom'
 import Footer from './components/Footer';
 import Sign from './components/Sign';
 import FirstPage from './components/AppFunc';
+import SecondPage from './components/Secondpage';
 
 
 
@@ -73,6 +74,7 @@ function App() {
       <Route path={'/'} element={<FirstPage/>}/>
       <Route path="/sign" element={<Sign/>}></Route>
       <Route path="/register"  element={<FirstPage/>} ></Route>
+      <Route path="/allcategary"  element={<SecondPage/>} ></Route>
       
       
     </Routes>

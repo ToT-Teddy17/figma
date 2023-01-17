@@ -67,14 +67,14 @@ function Search(props) {
             <button className="icons">
               <i class=" bi bi-cart"></i></button>
             <i class="text-warning">{props.wishlist} </i>
-            {cards.map(u => {
+            {/* {cards.map(u => {
                 return (
                     <div>
                         <div>{u.title}</div>
                        
                     </div>
                 )
-            })}
+            })} */}
 
            
 

@@ -1,6 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 
 import { Routes, Route,Link} from 'react-router-dom'
+import FirstPage from "./AppFunc"
+
 export default function Sign(){
 
     return(
@@ -19,7 +21,7 @@ export default function Sign(){
                     
                 <Link to={"/register"}>Register</Link>
                     <Routes>
-          <Route path="/register"  element ></Route>
+          <Route path="/register"  element={<FirstPage/>} ></Route>
         </Routes>
             </form>
                     </div>

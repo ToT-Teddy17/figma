@@ -7,73 +7,51 @@ import FirstPage from "./AppFunc"
 export default function Sign() {
 
     return (
+        <div>
+        
         <div className="d-flex justify-content-center align-items-center mt-5">
-
-
-            <div class="card">
-
-                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                    <li class="nav-item text-center">
-                        <a class="nav-link active btl" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Login</a>
-                    </li>
-                    <li class="nav-item text-center">
-                        <a class="nav-link btr" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Signup</a>
-                    </li>
-
-                </ul>
-                <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-
-                        <div class="form px-4 pt-5">
-
-                            <input type="text" name="" class="form-control" placeholder="Email or Phone" />
-
-                            <input type="text" name="" class="form-control" placeholder="Password" />
-                            <button class="btn btn-dark btn-block">Login</button>
-                        </div>
+            <div>
+            <h1><b>Sign up</b></h1>
+                <form onSubmit className='box'>
+                <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Name*</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username"/>
                     </div>
-
-                    <Link to={"/register"} >text</Link>
-                            <Routes>
-                                <Route path="/register" element={<Sign />}></Route>
-                            </Routes>
-
-
-
-
-                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-
-
-                        <div class="form px-4">
-
-                            <input type="text" name="" class="form-control" placeholder="Name" />
-
-                            <input type="text" name="" class="form-control" placeholder="Email" />
-
-                            <input type="text" name="" class="form-control" placeholder="Phone" />
-
-                            <input type="text" name="" class="form-control" placeholder="Password" />
-
-                            <button class="btn btn-dark btn-block">Signup</button>
-
-
-
-                            <Link to={"/register"} >text</Link>
-                            <Routes>
-                                <Route path="/register" element={<Sign />}></Route>
-                            </Routes>
-
-                        </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email*</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email"/>
                     </div>
-                </div>
-            </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password*</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"/>
+                        <div id="emailHelp" class="form-text">Must be least 8 characters</div>
+                    </div>
+                    
+                    <div className="shiljelt">
+                    <a href="/">Create account</a>
+                    </div>
+           
 
+
+
+
+                    <a href="/register">Log in</a>
+        </form>
+            </div >
+
+
+
+
+        </div >
 
         </div>
 
 
 
-
+        // <Link to={"/register"} >text</Link>
+        // <Routes>
+        //     <Route path="/register" element={<Sign />}></Route>
+        // </Routes>
 
     )
 }

@@ -1,0 +1,18 @@
+* {
+  background-color: black;
+  color: blanchedalmond;
+  text-align: center;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+}
+.active {
+  background-color: rgba(0, 0, 255, 0.619);
+  border-radius: 30px;
+  text-shadow: 5px 5px 2px red;
+}
+.hello {
+  display: flex;
+  justify-content: space-evenly;
+}

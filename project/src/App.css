@@ -3,7 +3,7 @@
   
 }
 #root{
- background-image: url(https://valcomm.co.uk/wp-content/uploads/2018/02/background.png);
+ 
  background-repeat: no-repeat;
  background-attachment: fixed;
  background-position: center; 
@@ -416,4 +416,12 @@ h3 ,p{
 
 
 
+.shiljelt{
+  background-color: #7F56D9;
+  
+}
 
+.shiljelt a{
+  text-decoration: none;
+  color: #fff;
+}

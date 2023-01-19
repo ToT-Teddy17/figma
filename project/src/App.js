@@ -20,6 +20,7 @@ import Footer from './components/Footer';
 import Sign from './components/Sign';
 import FirstPage from './components/AppFunc';
 import SecondPage from './components/Secondpage';
+import ProfileBox from './components/ProfileBox';
 
 
 
@@ -73,8 +74,9 @@ function App() {
        <Routes>
       <Route path={'/'} element={<FirstPage/>}/>
       <Route path="/sign" element={<Sign/>}></Route>
-      <Route path="/register"  element={<FirstPage/>} ></Route>
+      <Route path="/register"  element={<ProfileBox/>} ></Route>
       <Route path="/allcategary"  element={<SecondPage/>} ></Route>
+      <Route path="/loginafter" element={<ProfileBox/>}></Route>
       
       
     </Routes>

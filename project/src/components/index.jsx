@@ -8,6 +8,7 @@ export default function Index() {
         <Link to={"/sign"}></Link>
         <Link to={"/allcategary"}></Link>
         <Link to={"/loginafter"}></Link>
+        <Link to={"/profile"}></Link>
       </nav>
     </div>
   );

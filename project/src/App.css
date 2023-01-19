@@ -364,3 +364,8 @@ p {
 .icon {
   width: 20px;
 }
+#heart {
+  position: absolute;
+  top: 17px;
+  right: 15px;
+}

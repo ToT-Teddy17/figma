@@ -17,6 +17,7 @@ import { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import Footer from "./Footer";
 import Sign from "./Sign";
+import CanonSlider from "./CanonSlider";
 export default function FirstPage() {
   const [wishlist, setWishList] = useState(0);
   return (
@@ -24,7 +25,7 @@ export default function FirstPage() {
       <Header />
       <Search wishlist={wishlist} />
       <MainMenu />
-      <CanonCamera />
+      <CanonSlider />
       <CanonUnder />
       <div className=" align-middle d-flex justify-content-around bg-white">
         <h1 className="chincha">Popular products</h1>

@@ -18,6 +18,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import Footer from "./Footer";
 import Sign from "./Sign";
 import ProfileSearch from "./ProfileSearch";
+import NextCanonCamera from "./NextCanonCamera";
 export default function ProfileBox() {
   const [wishlist, setWishList] = useState(0);
   return (
@@ -25,7 +26,7 @@ export default function ProfileBox() {
       <Header />
       <ProfileSearch wishlist={wishlist} />
       <MainMenu />
-      <CanonCamera />
+      <NextCanonCamera />
       <CanonUnder />
       <div className=" align-middle d-flex justify-content-around bg-white">
         <h1 className="chincha">Popular products</h1>

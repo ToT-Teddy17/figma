@@ -1,8 +1,8 @@
 import Carousel from "react-bootstrap/Carousel";
-import SharButton from "./SharButton";
+
 import ProgressBar from "react-bootstrap/ProgressBar";
 
-function CanonCamera() {
+export default function NextCanonCamera() {
   return (
     <div className="slider">
       <div className="slider-left">
@@ -12,11 +12,10 @@ function CanonCamera() {
         >
           Canon camera
         </h1>
-        <SharButton />
 
         <div className="bara">
           <ProgressBar>
-            <ProgressBar animated now={35} />
+            <ProgressBar animated now={45} />
           </ProgressBar>
         </div>
       </div>
@@ -24,5 +23,3 @@ function CanonCamera() {
     </div>
   );
 }
-
-export default CanonCamera;

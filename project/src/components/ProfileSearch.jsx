@@ -43,7 +43,7 @@ export default function ProfileSearch(props) {
         <div className="text-heseg">
           <div>
             <i class="bi bi-person"></i>
-            <a href="">
+            <a href="/profile">
               <img className="icon" src="Profile.png" alt="" />
             </a>
           </div>

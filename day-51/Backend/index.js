@@ -32,19 +32,28 @@ app.post("/data", (request, response) => {
     name: request.body.name,
     age: request.body.age,
   };
-  data.push(newData);
+  data = [...data, requestData];
   response.json(data);
 });
 
 app.delete("/data", (request, response) => {
   console.log(request.body);
-
   const newData = data.filter((d) => d.id !== request.body.id);
 
   data = newData;
   console.log(data);
-
   response.json(data);
+});
+
+app.put("/data", (request, response) => {
+  const found = data.filter((d) => d.id === request.body.id);
+  const newData = data.map((d) => {
+    if (d.id === request.body.id) {
+      (d.name = request.body.name), (d.age = request.body.age);
+    }
+    return d;
+  });
+  data = newData;
 });
 
 app.listen(PORT, () => {

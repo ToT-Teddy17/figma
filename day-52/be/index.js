@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const fs = require("fs");
+const { request, response } = require("express");
 const app = express();
 const PORT = 8080;
 
@@ -94,6 +95,45 @@ app.post("/users", (request, response) => {
         response.json({
           status: "success",
           data: dataObject,
+        });
+      }
+    );
+  });
+});
+
+app.put("/users", (request, response) => {
+  console.log(request.body);
+  fs.readFile("./data/users.json", "utf-8", (readError, readData) => {
+    if (readError) {
+      response.json({
+        status: "file read error",
+        data: [],
+      });
+    }
+
+    const saveData = JSON.parse(readData);
+    const changedData = saveData.map((data) => {
+      if (data.id === request.body.id) {
+        (data.username = request.body.username), (data.age = request.body.age);
+      }
+      return data;
+    });
+
+    fs.writeFile(
+      "./data/users.json",
+      JSON.stringify(changedData),
+      (writeError) => {
+        if (writeError) {
+          response.json({
+            status: "error",
+            data: [],
+          });
+        }
+
+        console.log(changedData);
+        response.json({
+          status: "success",
+          data: changedData,
         });
       }
     );

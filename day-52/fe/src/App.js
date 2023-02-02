@@ -1,5 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
+import { createUser, fetchAllData } from "./services/usersServices";
+import { deleteUser } from "./services/axiosUsersServices";
 
 function App() {
   const URL = "http://localhost:8080/users";
@@ -15,30 +17,11 @@ function App() {
   const [currentUser, setCurrentUser] = useState(newUser);
 
   useEffect(() => {
-    fetchAllData();
+    fetchAllData(URL, setUsers);
   }, []);
 
-  async function fetchAllData() {
-    // fetch a data from localhost:8080/users
-    const FETCHED_DATA = await fetch(URL); // Response
-    const FETCHED_JSON = await FETCHED_DATA.json(); // {status: 'success', data: [{id: ....}]}
-    console.log(FETCHED_JSON);
-    setUsers(FETCHED_JSON.data);
-  }
-
   async function handleDelete(userId) {
-    const options = {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        userId: userId,
-      }),
-    };
-    const FETCHED_DATA = await fetch(URL, options);
-    const FETCHED_JSON = await FETCHED_DATA.json();
-    setUsers(FETCHED_JSON.data);
+    deleteUser(userId, URL, setUsers);
   }
 
   async function handleSubmit(e) {
@@ -61,24 +44,14 @@ function App() {
       const FETCHED_JSON = await FETCHED_DATA.json();
       setUsers(FETCHED_JSON.data);
     } else {
-      const putData = {
-        id: currentUser.id,
-        username: currentUser.username,
-        age: currentUser.age,
-      };
-
-      const options = {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(putData),
-      };
-      const FETCHED_DATA = await fetch(URL, options);
-      const FETCHED_JSON = await FETCHED_DATA.json();
-      setUsers(FETCHED_JSON.data);
-      setIsUpdate(false);
-      setCurrentUser(newUser);
+      createUser(
+        URL,
+        setCurrentUser,
+        setUsers,
+        setIsUpdate,
+        newUser,
+        currentUser
+      );
     }
   }
 
@@ -145,95 +118,3 @@ function App() {
 }
 
 export default App;
-
-// import "./App.css";
-// import { useEffect, useState } from "react";
-
-// function App() {
-//   const URL = "http://localhost:8080/users";
-
-//   const [users, setUSers] = useState([]);
-
-//   useEffect(() => {
-//     fetchAllData();
-//   }, []);
-
-//   async function fetchAllData() {
-//     const FETCHED_DATA = await fetch(URL);
-//     const FETCHED_JSON = await FETCHED_DATA.json();
-//     setUSers(FETCHED_JSON.data);
-//   }
-
-//   async function handleDelete(userID) {
-//     const options = {
-//       method: "DELETE",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify({
-//         userID: userID,
-//       }),
-//     };
-//     const FETCHED_DATA = await fetch(URL, options);
-//     const FETCHED_JSON = await FETCHED_DATA.json();
-//     setUSers(FETCHED_JSON.data);
-//   }
-
-//   async function handleSubmit(e) {
-//     e.preventDefault();
-//     const postData = {
-//       username: e.target.username.value,
-//       age: e.target.age.value,
-//     };
-
-//     const options = {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify(postData),
-//     };
-
-//     const FETCHED_DATA = await fetch(URL, options);
-//     const FETCHED_JSON = await FETCHED_DATA.json();
-//     console.log(FETCHED_JSON);
-//     setUSers(FETCHED_JSON.data);
-//   }
-
-//   return (
-//     <div className="App">
-//       <h1> Day52-NodeJS FS Module</h1>
-//       <h3>Create User FORM</h3>
-//       <form onSubmit={handleSubmit}>
-//         <label>
-//           username:
-//           <input name="username"></input>
-//         </label>
-//         <br></br>
-
-//         <label>
-//           age:
-//           <input name="age"></input>
-//         </label>
-//         <br></br>
-
-//         <button>SUBMIT</button>
-//       </form>
-
-//       <h3>user list</h3>
-//       {users &&
-//         users.map((user) => {
-//           return (
-//             <div>
-//               <p>
-//                 {user.username}:{user.age}{" "}
-//                 <button onClick={() => handleDelete(user.id)}>Delete</button>
-//               </p>
-//             </div>
-//           );
-//         })}
-//     </div>
-//   );
-// }
-
-// export default App;

@@ -1,10 +1,10 @@
 import React from "react";
 import Placemage from "./Placemage";
 
-export default function Place({ place, imageSize }) {
+export default function Place({ place }) {
   return (
     <div>
-      <Placemage place={place} imageSize={imageSize} />
+      <Placemage place={place} />
       <p>
         <b>
           {place.name}

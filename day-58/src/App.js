@@ -1,27 +1,29 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { useState } from "react";
+import { useContext } from "react";
 import List from "./component/List";
+import { ImageContext } from "./context/ImageContext";
+import Stopwatch from "./component/Stopwatch";
 
 function App() {
-  const [isLarge, setIsLarge] = useState(false);
-  const imageSize = isLarge ? 150 : 100;
-
-  function check(e) {
-    setIsLarge({
-      ...isLarge,
-      id: e.target.check,
-    });
-  }
+  const [isLarge, setIsLarge, imageSize] = useContext(ImageContext);
 
   return (
     <div className="App">
-      <label>
+      <Stopwatch />
+      {/* <label>
         Use Large Images
-        <input type="checkbox" onChange={check}></input>
-      </label>
+        <input
+          type="checkbox"
+          checked={isLarge}
+          onChange={(e) => {
+            setIsLarge(e.target.checked);
+          }}
+        ></input>
+      </label> */}
+      <hr />
 
-      <List imageSize={imageSize} />
+      {/* <List /> */}
     </div>
   );
 }

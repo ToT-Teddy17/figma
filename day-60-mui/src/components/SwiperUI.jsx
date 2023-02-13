@@ -1,4 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+import images from "../data/images";
 
 const SwiperUI = function () {
   const slides = images.map((image, index) => {

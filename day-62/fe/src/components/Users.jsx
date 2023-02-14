@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { Grid } from "@mui/material";
+import { useState, useEffect } from "react";
 
 export default function Users() {
-  const URL = `http://localhost:8080/users`;
+  const URL = "http://localhost:8080/users";
   const [users, setUsers] = useState([]);
 
   async function fetchUsers() {
@@ -10,22 +11,48 @@ export default function Users() {
     console.log(FETCHED_JSON);
     setUsers(FETCHED_JSON.data);
   }
+
   useEffect(() => {
     fetchUsers();
   }, []);
+
   return (
-    <>
-      <h1>Users list</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>first name</th>
-            <th>last name</th>
-            <th> email</th>
-            <th>address</th>
-          </tr>
-        </thead>
-      </table>
-    </>
+    <div>
+      <h1>Users List</h1>
+      <Grid
+        container
+        spacing={2}
+        direction="column"
+        alignItems="center"
+        justifyContent="center"
+      >
+        <Grid item>
+          <table>
+            <thead>
+              <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Role</th>
+              </tr>
+            </thead>
+            <tbody>
+              {users &&
+                users.map((user, index) => {
+                  return (
+                    <tr key={index}>
+                      <td>{user.firstname}</td>
+                      <td>{user.lastname}</td>
+                      <td>{user.email}</td>
+                      <td>{user.address}</td>
+                    </tr>
+                  );
+                })}
+            </tbody>
+          </table>
+        </Grid>
+      </Grid>
+    </div>
   );
 }

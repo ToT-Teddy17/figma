@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+ 
+  color: burlywood;
+ 
+  margin: auto;
 }
 
 .App-logo {
@@ -12,6 +16,7 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
 
 .App-header {
   background-color: #282c34;
@@ -36,3 +41,4 @@
     transform: rotate(360deg);
   }
 }
+

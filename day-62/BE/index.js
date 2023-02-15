@@ -116,6 +116,32 @@ app.post("/login", (request, response) => {
     } else {
       const foundUserObj = foundUser[0];
       console.log("foundUser", foundUserObj);
+      const plainPassword = body.password;
+      const savedPassword = foundUserObj.password;
+
+      bcrypt.compare(
+        plainPassword,
+        savedPassword,
+        (compareError, compareResult) => {
+          if (compareError) {
+            response.json({
+              status: "user not match",
+              data: [],
+            });
+          }
+
+          if (compareResult) {
+            response.json({
+              status: "success",
+              data: {
+                email: foundUserObj.email,
+                firstName: foundUserObj.firstName,
+                lastName: foundUserObj.lastName,
+              },
+            });
+          }
+        }
+      );
 
       if (foundUserObj.password !== body.password) {
         response.json({
@@ -124,11 +150,7 @@ app.post("/login", (request, response) => {
       } else {
         response.json({
           status: "success",
-          data: {
-            email: foundUserObj.email,
-            firstName: foundUserObj.firstname,
-            lastName: foundUserObj.lastname,
-          },
+          data: [],
         });
       }
     }

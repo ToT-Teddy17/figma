@@ -1,21 +1,43 @@
-import React from "react";
+import { Button, Grid, InputLabel, MenuItem, Select } from "@mui/material";
 import TextField from "@mui/material/TextField";
-import { Grid } from "@mui/material";
-import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 export default function UserRegisterForm() {
-  const URL = `http://localhost:8080/register`;
+  const URL = "http://localhost:8080/register";
+  const ROLE_URL = "http://localhost:8080/users/roles";
+
+  const [roles, setRoles] = useState([]);
+  const [currentRole, setCurrentRole] = useState(0);
+
+  useEffect(() => {
+    fetchRoles();
+  }, []);
+
+  async function fetchRoles() {
+    const FETCHED_DATA = await fetch(ROLE_URL);
+    const FETCHED_JSON = await FETCHED_DATA.json();
+    setRoles(FETCHED_JSON.data);
+    console.log(roles);
+  }
+  function handleSelectChange(e) {
+    console.log(e.target.value);
+    setCurrentRole(e.target.value);
+  }
+
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(e.target);
-
     const data = {
       firstname: e.target.firstname.value,
       lastname: e.target.lastname.value,
       email: e.target.email.value,
       password: e.target.password.value,
       address: e.target.address.value,
+      role: currentRole,
     };
+    console.log(data);
+
     const options = {
       method: "POST",
       headers: {
@@ -23,9 +45,13 @@ export default function UserRegisterForm() {
       },
       body: JSON.stringify(data),
     };
+
     const FETCHED_DATA = await fetch(URL, options);
     const FETCHED_JSON = await FETCHED_DATA.json();
     console.log(FETCHED_JSON);
+    if (FETCHED_JSON.status === "success") {
+      navigate("/users");
+    }
   };
   return (
     <div>
@@ -33,11 +59,11 @@ export default function UserRegisterForm() {
         <Grid container spacing={2}>
           <Grid item xs={12}>
             <TextField
-              id="firstname"
-              variant="filled"
+              id="firsname"
               name="firstname"
+              variant="filled"
               size="small"
-              defaultChecked=""
+              defaultValue=""
               label="First name"
             />
           </Grid>
@@ -47,8 +73,8 @@ export default function UserRegisterForm() {
               variant="filled"
               name="lastname"
               size="small"
-              defaultChecked=""
-              label="Last name"
+              defaultValue=""
+              label="Last Name"
             />
           </Grid>
           <Grid item xs={12}>
@@ -57,17 +83,17 @@ export default function UserRegisterForm() {
               variant="filled"
               name="email"
               size="small"
-              defaultChecked=""
+              defaultValue=""
               label="Email"
             />
           </Grid>
           <Grid item xs={12}>
             <TextField
               id="password"
-              variant="filled"
               name="password"
+              variant="filled"
               size="small"
-              defaultChecked=""
+              defaultValue=""
               label="Password"
             />
           </Grid>
@@ -75,21 +101,39 @@ export default function UserRegisterForm() {
             <TextField
               id="confirm-password"
               variant="filled"
-              name="confirm-password"
+              name="confirm"
               size="small"
-              defaultChecked=""
+              defaultValue=""
               label="Confirm Password"
             />
           </Grid>
           <Grid item xs={12}>
             <TextField
               id="address"
-              variant="filled"
               name="address"
+              variant="filled"
               size="small"
-              defaultChecked=""
+              defaultValue=""
               label="Address"
             />
+          </Grid>
+          <Grid item xs={12}>
+            <InputLabel>User Roles</InputLabel>
+            <Select
+              id="role-selector"
+              value={currentRole}
+              label="Roles"
+              onChange={handleSelectChange}
+            >
+              {roles &&
+                roles.map((role, index) => {
+                  return (
+                    <MenuItem key={index} value={role.id}>
+                      {role.name}
+                    </MenuItem>
+                  );
+                })}
+            </Select>
           </Grid>
           <Grid item xs={12}>
             <Button variant="outlined" type="submit">

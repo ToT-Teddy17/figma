@@ -8,7 +8,7 @@ export default function CategoryEditForm() {
   const URL = "http://localhost:8080/category";
   console.log(id);
 
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState({});
 
   useEffect(() => {
     async function fetchCategory() {
@@ -24,11 +24,12 @@ export default function CategoryEditForm() {
       const FETCHED_DATA = await fetch(URL, options);
       const FETCHED_JSON = await FETCHED_DATA.json();
       if (FETCHED_JSON.status === "success") {
-        setCategory(FETCHED_JSON.data);
+        console.log(FETCHED_JSON);
+        setCategory(FETCHED_JSON.data.name);
       }
     }
     fetchCategory();
-  }, [id]);
+  }, []);
 
   function handleInputChange(e) {
     setCategory(e.target.value);
@@ -51,6 +52,7 @@ export default function CategoryEditForm() {
     const FETCHED_DATA = await fetch(URL, options);
     const FETCHED_JSON = await FETCHED_DATA.json();
     if (FETCHED_JSON.status === "success") {
+      setCategory(FETCHED_JSON.data);
       navigate("/category/list");
     }
   }

@@ -8,7 +8,7 @@ import {
 } from "../services/employee-services.js";
 const emp_router = express.Router();
 
-emp_router.get("/employees", async (request, response) => {
+emp_router.get("/employee", async (request, response) => {
   const result = await getEmployees;
   console.log(result);
 

@@ -1,0 +1,26 @@
+GET http://localhost:8081/users HTTP/1.1
+Content-Type: application/json
+
+###
+
+
+POST http://localhost:8081/user HTTP/1.1
+Content-Type: application/json
+
+{
+    "name":"Teddy",
+    "email":"monhvvlee14@gmail.com",
+    "createdOn": "2010-01-01"
+}
+
+###
+
+
+DELETE http://localhost:8081/user HTTP/1.1
+Content-Type: application/json
+
+{
+    "id":"641142ba472c9c8084cb9ea6"
+}
+
+###

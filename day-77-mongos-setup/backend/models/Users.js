@@ -1,11 +1,18 @@
-const { Router, request, response } = require("express");
-const { default: mongoose } = require("mongoose");
-
+const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema({
   name: String,
-  email: String,
-  createdOn: String,
+  email: { type: String, unique: true },
+  createdOn: Date,
+  modifiedOn: { type: Date, default: Date.now },
+  lastLogin: Date,
 });
 
-const user = mongoose.model("user", userSchema);
-module.exports = user;
+userSchema.statics.findByUserEmail = function (userEmail) {
+  return this.find({ email: userEmail }, "_id name email", {
+    sort: "modifiedOn",
+  });
+};
+
+const User = mongoose.model("user", userSchema);
+
+module.exports = User;

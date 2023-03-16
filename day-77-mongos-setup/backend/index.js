@@ -1,12 +1,12 @@
-console.log("Day-77");
-const { request, response, Router } = require("express");
+console.log("Day - 77");
+
 const express = require("express");
 const mongoose = require("mongoose");
-const apiRouter = require("./routes/api.js");
+const apiRouter = require("./routes/api");
 
-const PORT = 8081;
+const PORT = 8282;
 const MONGO_CONNECTION_STRING =
-  "mongodb+srv://isit_teddy:1quRjrtJtgRlq6lS@cluster0.rk2ee40.mongodb.net/test";
+  "mongodb+srv://khangaikhuu_teacher:4dgZigRuS7evf3WG@mern-black.kosj6y7.mongodb.net/test";
 
 const app = express();
 app.use(express.json());
@@ -14,7 +14,7 @@ app.use(apiRouter);
 
 mongoose
   .connect(MONGO_CONNECTION_STRING)
-  .then(() => console.log("database connected succesfully"))
+  .then(() => console.log("Database connected succesfully"))
   .catch((error) => console.error(error));
 
 app.get("/", (request, response) => {

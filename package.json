@@ -4,5 +4,24 @@
     "exprss": "^0.0.1-security",
     "nodemon": "^2.0.20",
     "react-responsive-carousel": "^3.2.23"
-  }
+  },
+  "name": "figma",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ToT-Teddy17/figma.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ToT-Teddy17/figma/issues"
+  },
+  "homepage": "https://github.com/ToT-Teddy17/figma#readme"
 }

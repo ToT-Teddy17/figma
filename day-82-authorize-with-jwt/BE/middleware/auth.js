@@ -1,13 +1,14 @@
 const jwt = require("jsonwebtoken");
 
 const verifyToken = (req, res, next) => {
+  //next gj orj irwel middleware ym bn gej oilgono
   const token =
-    req.body.token || req.query.token || req.headers("x-access-token");
+    req.body.token || req.query.token || req.headers["x-access-token"];
 
   if (!token) {
     return res.status(403).json({
       success: false,
-      message: "medeeleleeeee oruuuul",
+      message: "Hereglegchiin token oruulah shaardlagatai",
     });
   }
   try {

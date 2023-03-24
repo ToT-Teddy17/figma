@@ -1,15 +1,25 @@
-const api = express.Router();
+const { request, response } = require("express");
 const express = require("express");
-const auth = require("../Middlewave/auth");
+const api_Router = express.Router();
+const bcrypt = require("bcrypt");
+const auth = require("../middleware/auth");
 
-api.post("/protected", auth, (request, response, next) => {
+api_Router.get("/", (request, response) => {
   response.status(200).json({
     data: [],
   });
 });
 
-api.post("/unprotected", async (request, response) => {
+api_Router.post("/protected", auth, (request, response, next) => {
   response.status(200).json({
-    data: [],
+    data: "Successfully got the protect route ✅",
   });
 });
+
+api_Router.post("/unprotected", (request, response) => {
+  response.status(200).json({
+    data: "Successfully got the protect route ✅",
+  });
+});
+
+module.exports = api_Router;

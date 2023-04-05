@@ -1,49 +1,53 @@
-console.log('Day - 90 - Express-Typecript')
+console.log("Day-92: Express TypeScript");
 
+// const express = require("express");
+// const mongoose = require("mongoose");
+import express, { Express, Request, Response } from "express";
+import dotenv from "dotenv";
+dotenv.config();
 
-import express, { Express, Request, Response } from 'express'
-import mongoose from "mongoose"
-import dotenv from 'dotenv'
-import TheaterRouter from './routes/theaters.api'
-dotenv.config()
-console.log('test')
+import mongoose from "mongoose";
+import cors from "cors";
+import theaterRouter from "./routes/theaters.api";
 
+const app: Express = express();
+const PORT = process.env.PORT || 8083;
+const MONGO_URI = process.env.MONGO_DB_URL || "mongodb://localhost:27017/test";
 
-const app: Express = express()
-const PORT = process.env.PORT || 8084;
-const MONGO_CONNECTION_STRING = process.env.MONGO_CONNECTION_STRING || "mongodb://localhost:27017/sample_mflix"
+let name: string = "<h1>Day-90: Express TypeScript</h1>";
+let phoneNumber: number = 99119911;
+let isMarried: boolean = false;
+let sheeps: Array<string> = ["sheep1", "sheep2", "sheep3"];
+let sheep: string[] = ["sheep1", "sheep2", "sheep3"];
 
-
-let name: string = '<h1 style="text-align: center">Day 90 Express TypeScript</h1>'
-
-let phoneNumber: number = 99119911
-let isMarried: boolean = false
-let sheeps: Array<string> = ["sheep1", "sheep2", "sheep3"]
-let sheep: string[] = ["sheep1", "sheep2", "sheep3"]
 let sheepObject: { name: string; age: number } = {
-    name: "sheep1",
-    age: 1
-}
-sheepObject.name = "sheep2"
-sheepObject.age = 2
+  name: "sheep1",
+  age: 1,
+};
+
+sheepObject.name = "sheep2";
+sheepObject.age = 2; // error
 
 interface Student {
-    name: String,
-    age: number,
-    isVerified: boolean,
+  name: string;
+  age: number;
+  isVerified: boolean;
 }
 
-app.use(express.json())
-app.get('/', (request: Request, response: Response) => {
-    response.status(200).json(name)
-})
+// name = 12;
 
-app.use('/theaters',TheaterRouter)
+app.use(cors());
+app.use(express.json());
+app.get("/", (req: Request, res: Response) => {
+  res.send(name);
+});
+
+app.use("/theaters", theaterRouter);
 
 app.listen(PORT, () => {
-    mongoose
-        .connect(MONGO_CONNECTION_STRING)
-        .then(() => console.log("Database connected succesfully."))
-        .catch((error) => console.error(error));
-    console.log(`Express Application is running on http://localhost:${PORT}`);
-})
+  console.log(`Server is running on port ${PORT}`);
+  mongoose
+    .connect(MONGO_URI)
+    .then(() => console.log("MongoDB connected"))
+    .catch((err) => console.log(err));
+});

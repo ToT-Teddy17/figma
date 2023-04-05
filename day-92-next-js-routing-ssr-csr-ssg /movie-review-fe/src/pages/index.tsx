@@ -5,7 +5,7 @@ import Link from "next/link";
 import React from "react";
 
 export async function getServerSideProps() {
-  const theaterRequest = await fetch("http://localhost:3000/theaters/list");
+  const theaterRequest = await fetch("http://localhost:8083/theaters/list");
   const theaterData = await theaterRequest.json();
 
   return {

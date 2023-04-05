@@ -1,15 +1,16 @@
-import {Router} from "express"
-import { getTheaterById, getTheaters, searchTheaters } from "../controllers/theater.controller";
+import { Router } from "express";
+import {
+  getTheaters,
+  getTheaterById,
+  searchTheaters,
+} from "../controllers/theater.controller";
 
+const theaterRouter = Router();
 
-const TheaterRouter=Router();
+theaterRouter.get("/list", getTheaters);
 
-TheaterRouter.get('/list',getTheaters);
+theaterRouter.get("/byId/:id", getTheaterById);
 
+theaterRouter.get("/search", searchTheaters);
 
-
-TheaterRouter.get('/byId/:id',getTheaterById)
-
-
-TheaterRouter.get('/search?keyword', searchTheaters)
-export default TheaterRouter
+export default theaterRouter;
